@@ -242,7 +242,6 @@ pub fn init_backend(
         state.common.refresh();
     }
 
-
     if (state.common.with_xwayland) {
       state.launch_xwayland(None);
     }
