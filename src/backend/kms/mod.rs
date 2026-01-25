@@ -168,9 +168,11 @@ pub fn init_backend(
         }
     }
 
-    // start x11
-    let primary = *state.backend.kms().primary_node.read().unwrap();
-    state.launch_xwayland(primary);
+    if (state.common.with_xwayland) {
+      // start x11
+      let primary = *state.backend.kms().primary_node.read().unwrap();
+      state.launch_xwayland(primary);
+    }
 
     Ok(())
 }

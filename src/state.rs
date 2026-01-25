@@ -292,6 +292,8 @@ pub struct Common {
 
     #[cfg(feature = "systemd")]
     pub inhibit_lid_fd: Option<OwnedFd>,
+
+    pub with_xwayland: bool,
 }
 
 #[derive(Debug)]
@@ -622,6 +624,7 @@ impl State {
         socket: OsString,
         handle: LoopHandle<'static, State>,
         signal: LoopSignal,
+        with_xwayland: bool,
     ) -> State {
         let requested_languages = DesktopLanguageRequester::requested_languages();
         i18n_embed::select(&*LANG_LOADER, &Localizations, &requested_languages)
@@ -789,6 +792,8 @@ impl State {
 
                 #[cfg(feature = "systemd")]
                 inhibit_lid_fd: None,
+
+                with_xwayland,
             },
             backend: BackendData::Unset,
             ready: Once::new(),
