@@ -118,7 +118,7 @@ pub fn run(hooks: crate::hooks::Hooks) -> Result<(), Box<dyn Error>> {
                 return Ok(());
             }
             Some("--no-xwayland") => {
-                println!("Running without Xwayland");
+                tracing::info!("Running without Xwayland");
                 with_xwayland = false;
             }
             Some("--version") | Some("-V") => {
