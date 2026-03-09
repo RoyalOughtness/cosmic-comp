@@ -245,8 +245,8 @@ Designed for the COSMIC™ desktop environment, cosmic-comp is a Wayland Composi
 Project home page: https://github.com/pop-os/cosmic-comp
 
 Options:
-  --no-xwayland       Run without Xwayland
   -h, --help          Show this message
+  --no-xwayland       Run without Xwayland
   -v, --version       Show the version of cosmic-comp"#
     );
 }
