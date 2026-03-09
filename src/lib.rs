@@ -117,7 +117,7 @@ pub fn run(hooks: crate::hooks::Hooks) -> Result<(), Box<dyn Error>> {
                 print_help(env!("CARGO_PKG_VERSION"), git_hash);
                 return Ok(());
             }
-            Some("--no-xwayland") | Some("-n") => {
+            Some("--no-xwayland") => {
                 println!("Running without Xwayland");
                 with_xwayland = false;
             }
@@ -245,9 +245,9 @@ Designed for the COSMIC™ desktop environment, cosmic-comp is a Wayland Composi
 Project home page: https://github.com/pop-os/cosmic-comp
 
 Options:
-  -h, --help     Show this message
-  -n, --no-xwayland   Run without xwayland
-  -v, --version  Show the version of cosmic-comp"#
+  -h, --help          Show this message
+  -v, --version       Show the version of cosmic-comp
+  --no-xwayland       Run without Xwayland"#
     );
 }
 
